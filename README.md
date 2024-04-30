@@ -15,11 +15,13 @@ This repository contains instructions and resources for setting up an Azure Clou
 
 ## Goals
 
-● Configure and deploy various Azure resources such as Virtual Machines, Log Analytics and Microsoft Sentinel.
+● Configure and deploy various Azure resources such as Virtual Machines, Log Analytics, and Microsoft Sentinel.
 ● Implement best security practices for network and virtual machine configuration.
 ● Implement and utilize data connectors to feed data into Microsoft Sentinel for analysis.
 ● Understand and configure Windows Event logs and Windows Security Policies.
 ● Implement and utilize KQL (Kusto Query Language) to query for filter out logs
+
+![](assets/0.png)
 
 ## Instructions
 
@@ -30,6 +32,8 @@ This repository contains instructions and resources for setting up an Azure Clou
 3. Name your resource group.
 4. Click on "Review and Create" to create your resource group.
 
+![](assets/1.png)
+
 ### Creating Virtual Machine
 
 1. Go back to your home page in the Azure portal.
@@ -39,15 +43,22 @@ This repository contains instructions and resources for setting up an Azure Clou
 5. Click on "Review and Create".
 6. Click on "Create".
 
+![](assets/2.png)
+
 ### Enabling Just In Time VM Access using Microsoft Defender
 
-1. Navigate to Microsoft Defender for Cloud service offered by Azure.
+1. Navigate to Microsoft Defender for the Cloud service offered by Azure.
 2. Select your subscription.
 3. Click on "Enable all plans".
+
+![](assets/3.png)
+
 4. Go into the inventory section.
 5. Click on the server created earlier.
 6. Select the recommendation "Management Ports of Virtual Machine should be protected with just-in-time network access control".
 7. Click on the "Fix" button.
+
+![](assets/4.png)
 
 ### Creating Log Analytics Workspace
 
@@ -56,6 +67,8 @@ This repository contains instructions and resources for setting up an Azure Clou
 3. Name the workspace and select the resource group.
 4. Click on "Review + Create".
 
+![](assets/5.png)
+
 ### Microsoft Sentinel
 
 1. Search for Microsoft Sentinel from the Home Screen.
@@ -63,23 +76,38 @@ This repository contains instructions and resources for setting up an Azure Clou
 3. Select the Log Analytics Workspace created earlier.
 4. Click on "Add".
 
+![](assets/6.png)
+
 ### Microsoft Sentinel Data Connectors
 
 1. Select Data Connectors from the Microsoft Sentinel screen.
 2. Select "More Data Connectors".
 3. Search and select "Windows Security Events".
+
+![](assets/7.png)
+
 4. Click on "Install".
 5. Click on "Open Connector Page".
-6. Click on "+Create data collection rule" and name the rule.
+
+![](assets/8.png)
+
+6. Click "+Create data collection rule" and name the rule.
+
+![](assets/9.png)
 
 ### Connecting to Your Windows 10 Virtual Machine via RDP
 
 1. Identify the IP Address of your Virtual Machine.
 2. Search for "Remote Desktop Connection" in the start menu.
 3. Enter the credentials.
+
+![](assets/10.png)
+
 4. Access the Windows 10 desktop of the virtual machine.
 5. Search for Event Viewer > Windows Log > Security Logs.
 6. Use the Find option to Find the Event ID 4624.
+
+![](assets/11.png)
 
 ### Kusto Query Language (KQL)
 
@@ -87,3 +115,5 @@ This repository contains instructions and resources for setting up an Azure Clou
 2. Type the following command into the query box: `SecurityEvent | where EventID == 4624`.
 3. Click on the "Run" button.
 4. To filter the results, add the project command to the query, e.g., `SecurityEvent | where EventID == 4624 | project TimeGenerated, Computer, Account`.
+
+![](assets/12.png)
