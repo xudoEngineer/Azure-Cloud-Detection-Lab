@@ -15,11 +15,11 @@ This repository contains instructions and resources for setting up an Azure Clou
 
 ## Goals
 
-● Configure and deploy various Azure resources such as Virtual Machines, Log Analytics, and Microsoft Sentinel.
-● Implement best security practices for network and virtual machine configuration.
-● Implement and utilize data connectors to feed data into Microsoft Sentinel for analysis.
-● Understand and configure Windows Event logs and Windows Security Policies.
-● Implement and utilize KQL (Kusto Query Language) to query for filter out logs
+- Configure and deploy various Azure resources such as Virtual Machines, Log Analytics, and Microsoft Sentinel.
+- Implement best security practices for network and virtual machine configuration.
+- Implement and utilize data connectors to feed data into Microsoft Sentinel for analysis.
+- Understand and configure Windows Event logs and Windows Security Policies.
+- Implement and utilize KQL (Kusto Query Language) to query for filter out logs
 
 ![](assets/0.png)
 
